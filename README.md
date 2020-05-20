@@ -1,0 +1,2 @@
+# AIDM
+AppImage Desktop Maker
