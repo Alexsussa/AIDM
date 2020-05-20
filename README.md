@@ -6,7 +6,7 @@ O mesmo sendo criado com intuito simples e prático.
 
 Modo de uso:
 
-Coloque nome do programa, uma breve descrição, depois selecione o programa com .AppImage e em seguida uma imagem para usar de logo.
+Coloque nome do programa, uma breve descrição, depois selecione o programa com .AppImage e em seguida uma imagem para usar como logo.
 
 Prontinho!
 
