@@ -15,3 +15,5 @@ Prontinho!
 Poderá abrir o menu de programas e buscar pelo nome do programa, abrir e usar tranquilamente.
 
 Claro que como qualquer software em testes e primera versão ainda deve ser implementado.
+
+Link para o software: http://bit.ly/AppImageDesktopMaker
