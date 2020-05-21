@@ -26,7 +26,7 @@ class AppImageDesktopMaker(Gtk.Window):
         self.lbaviso = builder.get_object('lbaviso')
         self.sobre = builder.get_object('sobre')
 
-        self.sobre.connect("response", lambda d, r: d.hide())
+        self.sobre.connect('response', lambda d, r: d.hide())
 
     def on_btnappimage_clicked(self, button):
         self.aichooser.show()

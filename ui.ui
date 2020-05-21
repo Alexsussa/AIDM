@@ -294,9 +294,11 @@
   <object class="GtkAboutDialog" id="sobre">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Sobre</property>
+    <property name="modal">True</property>
     <property name="icon">icons/icon.ico</property>
     <property name="type_hint">dialog</property>
     <property name="accept_focus">False</property>
+    <property name="deletable">False</property>
     <property name="transient_for">aidm</property>
     <property name="program_name">AppImage Desktop Maker</property>
     <property name="version">0.1</property>
@@ -345,14 +347,16 @@
   <object class="GtkFileChooserDialog" id="appimagechooser">
     <property name="can_focus">True</property>
     <property name="title" translatable="yes">Escolha uma aplicação .AppImage</property>
+    <property name="modal">True</property>
     <property name="type_hint">dialog</property>
+    <property name="deletable">False</property>
     <property name="transient_for">aidm</property>
     <property name="filter">appimages</property>
     <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
-      <object class="GtkBox">
+      <object class="GtkBox" id="vbaichooser">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
@@ -368,6 +372,8 @@
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="on_btncancel_clicked" swapped="no"/>
+                <accelerator key="Escape" signal="clicked"/>
+                <accelerator key="Escape" signal="activate"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -383,6 +389,10 @@
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="on_btnabrir_clicked" swapped="no"/>
+                <accelerator key="Return" signal="activate"/>
+                <accelerator key="KP_Enter" signal="activate"/>
+                <accelerator key="Return" signal="clicked"/>
+                <accelerator key="KP_Enter" signal="clicked"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -417,14 +427,16 @@
   <object class="GtkFileChooserDialog" id="logochooser">
     <property name="can_focus">True</property>
     <property name="title" translatable="yes">Escolha um arquivo de imagem</property>
+    <property name="modal">True</property>
     <property name="type_hint">dialog</property>
+    <property name="deletable">False</property>
     <property name="transient_for">aidm</property>
     <property name="filter">imagens</property>
     <child>
       <placeholder/>
     </child>
     <child internal-child="vbox">
-      <object class="GtkBox">
+      <object class="GtkBox" id="vblogochooser">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
@@ -440,6 +452,8 @@
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="on_cancelarlogo_clicked" swapped="no"/>
+                <accelerator key="Escape" signal="clicked"/>
+                <accelerator key="Escape" signal="activate"/>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -455,6 +469,10 @@
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <signal name="clicked" handler="on_abrirlogo_clicked" swapped="no"/>
+                <accelerator key="Return" signal="activate"/>
+                <accelerator key="KP_Enter" signal="activate"/>
+                <accelerator key="Return" signal="clicked"/>
+                <accelerator key="KP_Enter" signal="clicked"/>
               </object>
               <packing>
                 <property name="expand">True</property>
