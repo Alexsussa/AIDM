@@ -36,6 +36,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="tooltip_text" translatable="yes">Nome para o atalho</property>
+            <property name="show_emoji_icon">True</property>
           </object>
           <packing>
             <property name="x">73</property>
