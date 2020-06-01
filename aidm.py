@@ -68,7 +68,7 @@ class AppImageDesktopMaker(Gtk.Window):
             self.aviso.show()
         else:
             self.loading.start()
-            os.system(f'touch {nome}.desktop')
+            os.system(f'touch {tuple(nome)}.desktop')
             abrir = open(f'{nome}.desktop', mode='w')
             abrir.write('[Desktop Entry]\n')
             abrir.write('Version=1.0\n')
@@ -78,8 +78,8 @@ class AppImageDesktopMaker(Gtk.Window):
             abrir.write(f'Name={nome}\n')
             abrir.write(f'Exec="{app}"\n')
             abrir.write(f'Comment={descr}\n')
-            os.system(f'chmod +x {nome}.desktop')
-            os.system(f'mv {nome}.desktop ~/.local/share/applications')
+            os.system(f'chmod +x *.desktop')
+            os.system(f'mv *.desktop ~/.local/share/applications')
             self.lbaviso.set_text('Atalho Desktop criado com sucesso.\n'
                                   'Agora poderá encontrá-lo no menu de aplicações.')
             self.aviso.show()
