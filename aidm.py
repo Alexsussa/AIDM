@@ -12,6 +12,14 @@ from gi.repository import Gtk, GObject, Gdk
 import os
 import sys
 
+pid = os.getpid()
+pidfile = '/tmp/aidm.pid'
+if not os.path.isfile(pidfile):
+    os.system(f'touch {pidfile}')
+    os.system(f'echo {pid} >> {pidfile}')
+else:
+    sys.exit(-1)
+
 
 class AppImageDesktopMaker(Gtk.Window):
     def __init__(self):
@@ -93,6 +101,7 @@ class AppImageDesktopMaker(Gtk.Window):
 
     def on_aidm_destroy(self, window):
         Gtk.main_quit()
+        os.system(f'rm {pidfile}')
 
 
 builder = Gtk.Builder()
