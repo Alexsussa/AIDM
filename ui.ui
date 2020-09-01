@@ -23,7 +23,7 @@
             <property name="height_request">31</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Nome:</property>
+            <property name="label" translatable="yes">Name:</property>
           </object>
           <packing>
             <property name="y">15</property>
@@ -31,11 +31,11 @@
         </child>
         <child>
           <object class="GtkEntry" id="txtnome">
-            <property name="width_request">168</property>
+            <property name="width_request">164</property>
             <property name="height_request">28</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tooltip_text" translatable="yes">Nome para o atalho</property>
+            <property name="tooltip_text" translatable="yes">Set a shortcut name</property>
           </object>
           <packing>
             <property name="x">73</property>
@@ -44,81 +44,55 @@
         </child>
         <child>
           <object class="GtkLabel" id="lbdescr">
-            <property name="width_request">100</property>
+            <property name="width_request">90</property>
             <property name="height_request">20</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Descrição:</property>
+            <property name="label" translatable="yes">Description:</property>
           </object>
           <packing>
-            <property name="x">229</property>
-            <property name="y">22</property>
+            <property name="x">233</property>
+            <property name="y">21</property>
           </packing>
         </child>
         <child>
           <object class="GtkEntry" id="txtdescr">
-            <property name="width_request">236</property>
+            <property name="width_request">233</property>
             <property name="height_request">28</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tooltip_text" translatable="yes">Descrição para o atalho</property>
+            <property name="tooltip_text" translatable="yes">Set a shortcut description</property>
           </object>
           <packing>
-            <property name="x">312</property>
+            <property name="x">315</property>
             <property name="y">18</property>
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="lbappimage">
-            <property name="width_request">100</property>
-            <property name="height_request">20</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">AppImage:</property>
-          </object>
-          <packing>
-            <property name="x">13</property>
-            <property name="y">60</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkEntry" id="txtappimage">
-            <property name="width_request">346</property>
+            <property name="width_request">371</property>
             <property name="height_request">28</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tooltip_text" translatable="yes">Selecione um AppImage no botão ao lado</property>
+            <property name="tooltip_text" translatable="yes">Select an AppImage app by clicking the button</property>
             <property name="editable">False</property>
           </object>
           <packing>
-            <property name="x">98</property>
+            <property name="x">73</property>
             <property name="y">55</property>
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="lblogo">
-            <property name="width_request">89</property>
-            <property name="height_request">22</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Logo:</property>
-          </object>
-          <packing>
-            <property name="x">4</property>
-            <property name="y">100</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkEntry" id="txtlogo">
-            <property name="width_request">374</property>
+            <property name="width_request">371</property>
             <property name="height_request">28</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tooltip_text" translatable="yes">Selecione uma imagem no botão ao lado</property>
+            <property name="tooltip_text" translatable="yes">Select an app logo by clicking the button</property>
             <property name="editable">False</property>
           </object>
           <packing>
-            <property name="x">70</property>
+            <property name="x">73</property>
             <property name="y">97</property>
           </packing>
         </child>
@@ -130,7 +104,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="tooltip_text" translatable="yes">Selecione um AppImage</property>
+            <property name="tooltip_text" translatable="yes">Select an AppImage</property>
             <signal name="clicked" handler="on_btnappimage_clicked" swapped="no"/>
           </object>
           <packing>
@@ -146,7 +120,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="tooltip_text" translatable="yes">Selecione uma imagem</property>
+            <property name="tooltip_text" translatable="yes">Select an image</property>
             <signal name="clicked" handler="on_btnlogo_clicked" swapped="no"/>
           </object>
           <packing>
@@ -156,13 +130,13 @@
         </child>
         <child>
           <object class="GtkButton" id="btncriar">
-            <property name="label" translatable="yes">Criar atalho</property>
+            <property name="label" translatable="yes">Create shortcut</property>
             <property name="width_request">100</property>
             <property name="height_request">34</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="tooltip_text" translatable="yes">Criar atalho Desktop AppImage</property>
+            <property name="tooltip_text" translatable="yes">Create Desktop AppImage shortcut</property>
             <signal name="clicked" handler="on_btncriar_clicked" swapped="no"/>
           </object>
           <packing>
@@ -177,7 +151,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="opacity">0.5</property>
-            <property name="label" translatable="yes">versão 0.1</property>
+            <property name="label" translatable="yes">version 0.1</property>
           </object>
           <packing>
             <property name="x">492</property>
@@ -213,14 +187,14 @@
         </child>
         <child>
           <object class="GtkButton" id="btnsobre">
-            <property name="label" translatable="yes">sobre</property>
+            <property name="label" translatable="yes">about</property>
             <property name="width_request">68</property>
             <property name="height_request">34</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="focus_on_click">False</property>
             <property name="receives_default">True</property>
-            <property name="tooltip_text" translatable="yes">Sobre o AIDM Ctrl+S</property>
+            <property name="tooltip_text" translatable="yes">About AIDM Ctrl+S</property>
             <property name="opacity">0.5</property>
             <property name="relief">none</property>
             <signal name="clicked" handler="on_btnsobre_clicked" swapped="no"/>
@@ -293,7 +267,7 @@
   </object>
   <object class="GtkAboutDialog" id="sobre">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Sobre</property>
+    <property name="title" translatable="yes">About</property>
     <property name="modal">True</property>
     <property name="icon">icons/icon.ico</property>
     <property name="type_hint">dialog</property>
@@ -346,7 +320,7 @@
   </object>
   <object class="GtkFileChooserDialog" id="appimagechooser">
     <property name="can_focus">True</property>
-    <property name="title" translatable="yes">Escolha uma aplicação .AppImage</property>
+    <property name="title" translatable="yes">Choose an AppImage app</property>
     <property name="modal">True</property>
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
@@ -444,13 +418,13 @@
   </object>
   <object class="GtkFileChooserDialog" id="logochooser">
     <property name="can_focus">True</property>
-    <property name="title" translatable="yes">Escolha um arquivo de imagem</property>
+    <property name="title" translatable="yes">Choose an image file</property>
     <property name="modal">True</property>
     <property name="type_hint">dialog</property>
     <property name="deletable">False</property>
     <property name="transient_for">aidm</property>
     <property name="filter">imagens</property>
-    <child>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child internal-child="vbox">
