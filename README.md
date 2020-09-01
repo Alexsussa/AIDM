@@ -10,7 +10,7 @@ Coloque nome do programa, uma breve descrição, depois selecione o programa com
 
 Prontinho!
 
-![](https://github.com/Alexsussa/AIDM/blob/master/screentshot%20AppImage%20Desktop%20Maker.png?raw=true)
+![](https://github.com/Alexsussa/AIDM/blob/master/screentshot%20AIDM.png?raw=true)
 
 Poderá abrir o menu de programas e buscar pelo nome do programa, abrir e usar tranquilamente.
 
