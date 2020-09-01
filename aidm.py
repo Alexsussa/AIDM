@@ -8,12 +8,21 @@ __link__ = 'https://github.com/Alexsussa/AIDM'
 import gi
 
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GObject, Gdk
+from gi.repository import Gtk, GObject
 import os
 import sys
+import locale
+import gettext
+
+appname = 'aidm'
+wami = os.path.abspath(os.path.realpath(__file__))
+dir = os.path.join(wami, 'mo')
+
+gettext.bindtextdomain(appname, dir)
+gettext.textdomain(appname)
 
 pid = os.getpid()
-pidfile = '/tmp/aidm.pid'
+pidfile = os.path.join('/tmp/aidm.pid')
 if not os.path.isfile(pidfile):
     os.system(f'touch {pidfile}')
     os.system(f'echo {pid} >> {pidfile}')
@@ -68,7 +77,7 @@ class AppImageDesktopMaker(Gtk.Window):
 
     def on_btncriar_clicked(self, button):
         nome = self.txtnome.get_text()
-        descr = self.txtdescr.get_text()
+        descr = self.txtdescr.get_text().strip()
         app = self.txtappimage.get_text()
         img = self.txtlogo.get_text()
         if nome == '' or descr == '' or app == '' or img == '':
@@ -105,6 +114,7 @@ class AppImageDesktopMaker(Gtk.Window):
 
 
 builder = Gtk.Builder()
+builder.set_translation_domain(appname)
 builder.add_from_file('ui.ui')
 builder.connect_signals(AppImageDesktopMaker())
 janela = builder.get_object('aidm')
