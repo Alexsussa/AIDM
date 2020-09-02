@@ -29,5 +29,4 @@ Of course how any software in tests and first version must be implemented.
 
 Claro que como qualquer software em testes e primera versão ainda deve ser implementado.
 
-Link to download AIDM:
-Link baixar o AIDM: [**Download**](https://github.com/Alexsussa/AIDM/releases) em arquivo .deb e em .AppImage.
+Link para baixar o AIDM: [**Download**](https://github.com/Alexsussa/AIDM/releases) em arquivo .deb e em .AppImage.
