@@ -9,13 +9,13 @@ O mesmo sendo criado com intuito simples e prático.
 
 **en**: How to use:
 
-**en**: Insert a program name, a simple description, after select a software .AppImage e then an image to use as logo.
+Insert a program name, a simple description, after select a software .AppImage e then an image to use as logo.
 
 Done!
 
 **ptbr**: Modo de uso:
 
-**ptbr**: Coloque nome do programa, uma breve descrição, depois selecione o programa com .AppImage e em seguida uma imagem para usar como logo.
+Coloque nome do programa, uma breve descrição, depois selecione o programa com .AppImage e em seguida uma imagem para usar como logo.
 
 Prontinho!
 
