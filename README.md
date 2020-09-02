@@ -9,7 +9,7 @@ O mesmo sendo criado com intuito simples e prático.
 
 **en**: How to use:
 
-**en**: Insert a program name, a simple description, after select a sowftware .AppImage e then an image to use as logo.
+**en**: Insert a program name, a simple description, after select a software .AppImage e then an image to use as logo.
 
 Done!
 
