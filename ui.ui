@@ -8,7 +8,7 @@
     <property name="resizable">False</property>
     <property name="default_width">570</property>
     <property name="default_height">430</property>
-    <property name="icon">/usr/share/icons/aidm/icon.ico</property>
+    <property name="icon">icons/aidm.png</property>
     <signal name="destroy" handler="on_aidm_destroy" swapped="no"/>
     <child>
       <placeholder/>
@@ -179,7 +179,7 @@
             <property name="tooltip_text" translatable="yes">Select an AppImage logo by clicking the button</property>
             <property name="halign">center</property>
             <property name="valign">center</property>
-            <property name="pixbuf">/usr/share/icons/aidm/aidm.png</property>
+            <property name="pixbuf">icons/aidm_bg.png</property>
           </object>
           <packing>
             <property name="x">59</property>
@@ -284,7 +284,7 @@
     <property name="documenters">Alex Pinheiro</property>
     <property name="translator_credits" translatable="yes">Alex Pinheiro</property>
     <property name="artists">Alex Pinheiro</property>
-    <property name="logo">/usr/share/icons/aidm/logo.png</property>
+    <property name="logo">icons/aidm.png</property>
     <property name="license_type">mit-x11</property>
     <child>
       <placeholder/>
