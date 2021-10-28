@@ -16,8 +16,6 @@ Done!
 
 You open software menu and search by the program name, open it and use it.
 
-Of course how any software in tests and first version must be implemented.
-
 **Português Brasil:**
 
 AppImage Desktop Maker (AIDM) é software simples para criação de atalhos desktop para programas .AppImage.
@@ -32,7 +30,5 @@ Prontinho!
 ![](https://raw.githubusercontent.com/Alexsussa/AIDM/master/screenshot_aidm_pt_br.png)
 
 Poderá abrir o menu de programas e buscar pelo nome do programa, abrir e usar tranquilamente.
-
-Claro que como qualquer software em testes e primera versão ainda deve ser implementado.
 
 Link para baixar o AIDM: [**Download**](https://github.com/Alexsussa/AIDM/releases) em arquivo .deb e em .AppImage.
