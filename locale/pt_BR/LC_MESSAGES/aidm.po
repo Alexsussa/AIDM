@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-28 11:41-0300\n"
+"PO-Revision-Date: 2021-10-28 11:41-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-SearchPath-0: aidm.py\n"
+"X-Poedit-SearchPath-1: common.py\n"
+
+#: aidm.py:27
+msgid "Name"
+msgstr "Nome"
+
+#: aidm.py:35
+msgid "Description"
+msgstr "Descrição"
+
+#: aidm.py:45 common.py:32
+msgid "AudioVideo"
+msgstr "Audio e Vídeo"
+
+#: aidm.py:45 common.py:32
+msgid "Development"
+msgstr "Desenvolvimento"
+
+#: aidm.py:45 common.py:32
+msgid "Education"
+msgstr "Educação"
+
+#: aidm.py:45 common.py:32
+msgid "Game"
+msgstr "Jogos"
+
+#: aidm.py:45 common.py:32
+msgid "Graphics"
+msgstr "Gráficos"
+
+#: aidm.py:45 common.py:32
+msgid "Network"
+msgstr "Internet"
+
+#: aidm.py:45 common.py:32
+msgid "Office"
+msgstr "Escritório"
+
+#: aidm.py:45 common.py:32
+msgid "Science"
+msgstr "Ciência"
+
+#: aidm.py:45 common.py:32
+msgid "Settings"
+msgstr "Configurações"
+
+#: aidm.py:45 common.py:32
+msgid "System"
+msgstr "Sistema"
+
+#: aidm.py:45 common.py:32
+msgid "Utility"
+msgstr "Utilitários"
+
+#: aidm.py:47
+msgid "Categories"
+msgstr "Categorias"
+
+#: aidm.py:69
+msgid "Logo"
+msgstr "Logotipo"
+
+#: aidm.py:79
+msgid "Create Shortcut"
+msgstr "Criar Atalho"
+
+#: aidm.py:84
+msgid "About"
+msgstr "Sobre"
+
+#: aidm.py:90
+msgid "Version 0.2"
+msgstr "Versão 0.2"
+
+#: common.py:23
+msgid "Open Image file"
+msgstr "Abrir arquivo de imagem"
+
+#: common.py:35 common.py:38 common.py:41 common.py:66
+msgid "Information"
+msgstr "Informação"
+
+#: common.py:35
+msgid "Fill all fields before click on create shortcut button."
+msgstr "Preencha todos os campos antes de clicar no botão criar atalho."
+
+#: common.py:38
+msgid "You need to choose a valid .AppImage file."
+msgstr "Você precisa escolher um arquivo .AppImage válido."
+
+#: common.py:41
+msgid "You need to choose a valid image file."
+msgstr "Você precisa escolher um arquivo de imagem válido."
+
+#: common.py:66
+msgid ""
+"Desktop AppImage shortcut created successfully. Now your application can be "
+"found in application menu."
+msgstr ""
+"Atalho desktop de AppImage criado com sucesso. Agora o seu aplicativo pode "
+"ser encontrado no menu de aplicatições."
+
+#: common.py:81
+msgid "About AIDM"
+msgstr "Sobre o AIDM"
+
+#: common.py:92
+msgid "Source Code"
+msgstr "Código Fonte"
+
+#: common.py:98
+msgid "License MIT"
+msgstr "Licença MIT"
+
+#~ msgid "Images"
+#~ msgstr "Imagens"
+
+#~ msgid "Images (*.jpg *.jpeg *.svg *.png)"
+#~ msgstr "Imagens (*.png, *.jpg, *.jpeg, *.gif)"
+
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgid "AppImage Desktop Maker"
+#~ msgstr "AppImage Desktop Maker"
+
+#~ msgid "Name:"
+#~ msgstr "Nome"
+
+#~ msgid "Set a shortcut name"
+#~ msgstr "Defina um nome para o atalho"
+
+#~ msgid "Description:"
+#~ msgstr "Descrição:"
+
+#~ msgid "Set a shortcut description"
+#~ msgstr "Defina uma descrição para o atalho"
+
+#~ msgid "Select an AppImage app by clicking the button"
+#~ msgstr "Selecione um aplicativo AppImage clicando no botão"
+
+#~ msgid "Select an logo app by clicking the button"
+#~ msgstr "Selecione um logotipo no botão ao lado"
+
+#~ msgid "Select an AppImage"
+#~ msgstr "Selecione um AppImage"
+
+#~ msgid "Select an image"
+#~ msgstr "Selecione um a imagem"
+
+#~ msgid "Create Desktop AppImage shortcut"
+#~ msgstr "Criar atalho para o Desktop"
+
+#~ msgid "Select an AppImage logo by clicking the button"
+#~ msgstr "Selecione um logotipo para o AppImage no botão ao lado"
+
+#~ msgid "about"
+#~ msgstr "sobre"
+
+#~ msgid "Stats"
+#~ msgstr "Status"
+
+#~ msgid "© 2020 Alex Pinheiro"
+#~ msgstr "© 2020 Alex Pinheiro"
+
+#~ msgid "GitHub AppImage Desktop Maker"
+#~ msgstr "GitHub AppImage Desktop Maker"
+
+#~ msgid "Alex Pinheiro"
+#~ msgstr "Alex Pinheiro"
+
+#~ msgid "Choose an AppImage app"
+#~ msgstr "Selecione um aplicativo AppImage"
+
+#~ msgid "*.AppImage, *.appimage"
+#~ msgstr "*.AppImage, *.appimage"

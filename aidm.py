@@ -1,122 +1,112 @@
 #!/usr/bin/python3
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-__author__ = 'Alex Pinheiro'
-__version__ = '0.1'
-__link__ = 'https://github.com/Alexsussa/AIDM'
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from common import *
+import os, sys, gettext
 
-import gi
+APPANME = 'aidm'
+LOCALE = os.path.abspath('locale')
 
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
-import os
-import sys
-import locale
-import gettext
-
-appname = 'aidm'
-wami = os.path.abspath(os.path.realpath(__file__))
-dir = os.path.join(wami, 'mo')
-
-gettext.bindtextdomain(appname, dir)
-gettext.textdomain(appname)
-
-pid = os.getpid()
-pidfile = os.path.join('/tmp/aidm.pid')
-if not os.path.isfile(pidfile):
-    os.system(f'touch {pidfile}')
-    os.system(f'echo {pid} >> {pidfile}')
-else:
-    sys.exit(-1)
+gettext.bindtextdomain(APPANME, LOCALE)
+gettext.textdomain(APPANME)
+_ = gettext.gettext
 
 
-class AppImageDesktopMaker(Gtk.Window):
+class AIDM(QMainWindow):
     def __init__(self):
-        self.aichooser = builder.get_object('appimagechooser')
-        self.logochooser = builder.get_object('logochooser')
-        self.txtnome = builder.get_object('txtnome')
-        self.txtdescr = builder.get_object('txtdescr')
-        self.txtappimage = builder.get_object('txtappimage')
-        self.txtlogo = builder.get_object('txtlogo')
-        self.loading = builder.get_object('spinner')
-        self.aviso = builder.get_object('aviso')
-        self.lbaviso = builder.get_object('lbaviso')
-        self.sobre = builder.get_object('sobre')
+        super().__init__()
 
-        self.sobre.connect('response', lambda d, r: d.hide())
+        self.central = QWidget()
+        self.setCentralWidget(self.central)
 
-    def on_btnappimage_clicked(self, button):
-        self.aichooser.show()
+        self.font = QFont('Helvetica', 11)
 
-    def on_btncancel_clicked(self, button):
-        self.aichooser.hide()
+        self.lbName = QLabel(_('Name'), self.central)
+        self.lbName.setFont(self.font)
+        self.lbName.setGeometry(20, 30, 50, 30)
 
-    def on_btnabrir_clicked(self, button):
-        if self.txtappimage.get_text() == '':
-            self.txtappimage.set_text(text=self.aichooser.get_filename())
-            self.aichooser.hide()
-        else:
-            self.txtappimage.set_text(text='')
-            self.txtappimage.set_text(text=self.aichooser.get_filename())
-            self.aichooser.hide()
+        self.name_txt = QLineEdit(self.central)
+        self.name_txt.setFont(self.font)
+        self.name_txt.setGeometry(70, 30, 200, 30)
 
-    def on_btnlogo_clicked(self, button):
-        self.logochooser.show()
+        self.lbDescription = QLabel(_('Description'), self.central)
+        self.lbDescription.setFont(self.font)
+        self.lbDescription.setGeometry(280, 30, 100, 30)
+        
+        self.description_txt = QLineEdit(self.central)
+        self.description_txt.setFont(self.font)
+        self.description_txt.setGeometry(370, 30, 300, 30)
 
-    def on_cancelarlogo_clicked(self, button):
-        self.logochooser.hide()
+        categories = {'AudioVideo': _('AudioVideo'), 'Development': _('Development'), 'Education': _('Education'), 'Game': _('Game'), 'Graphics': _('Graphics'), 'Network': _('Network'), 'Office': _('Office'), 'Science': _('Science'), 'Settings': _('Settings'), 'System': _('System'), 'Utility': _('Utility')}
 
-    def on_abrirlogo_clicked(self, button):
-        if self.txtlogo.get_text() == '':
-            self.txtlogo.set_text(text=self.logochooser.get_filename())
-            self.logochooser.hide()
-        else:
-            self.txtlogo.set_text(text='')
-            self.txtlogo.set_text(text=self.logochooser.get_filename())
-            self.logochooser.hide()
+        self.categories = QLabel(_('Categories'), self.central)
+        self.categories.setFont(self.font)
+        self.categories.setGeometry(20, 70, 100, 30)
 
-    def on_btncriar_clicked(self, button):
-        nome = self.txtnome.get_text()
-        descr = self.txtdescr.get_text().strip()
-        app = self.txtappimage.get_text()
-        img = self.txtlogo.get_text()
-        if nome == '' or descr == '' or app == '' or img == '':
-            self.lbaviso.set_text('Nenhum campo pode estar vázio')
-            self.aviso.show()
-        else:
-            self.loading.start()
-            os.system(f'touch {tuple(nome)}.desktop')
-            abrir = open(f'{nome}.desktop', mode='w')
-            abrir.write('[Desktop Entry]\n')
-            abrir.write('Version=1.0\n')
-            abrir.write(f'Type=Application\n')
-            abrir.write(f'Terminal=false\n')
-            abrir.write(f'Icon={img}\n')
-            abrir.write(f'Name={nome}\n')
-            abrir.write(f'Exec="{app}"\n')
-            abrir.write(f'Comment={descr}\n')
-            os.system(f'chmod +x *.desktop')
-            os.system(f'mv *.desktop ~/.local/share/applications')
-            self.lbaviso.set_text('Atalho Desktop criado com sucesso.\n'
-                                  'Agora poderá encontrá-lo no menu de aplicações.')
-            self.aviso.show()
+        self.categories_txt = QComboBox(self.central)
+        self.categories_txt.setFont(self.font)
+        self.categories_txt.setGeometry(105, 70, 150, 30)
+        self.categories_txt.addItems(sorted(categories.values()))
 
-    def on_btnok_clicked(self, button):
-        self.aviso.hide()
-        self.loading.stop()
+        self.appImage_txt = QLineEdit(self.central)
+        self.appImage_txt.setFont(self.font)
+        self.appImage_txt.setGeometry(260, 70, 280, 30)
 
-    def on_btnsobre_clicked(self, button):
-        self.sobre.show()
+        self.appImage_btn = QPushButton('AppImage', self.central)
+        self.appImage_btn.setFont(self.font)
+        self.appImage_btn.setGeometry(550, 70, 120, 30)
+        self.appImage_btn.clicked.connect(lambda: loadAppImage(self, self.appImage_txt))
 
-    def on_aidm_destroy(self, window):
-        Gtk.main_quit()
-        os.system(f'rm {pidfile}')
+        self.logo_txt = QLineEdit(self.central)
+        self.logo_txt.setFont(self.font)
+        self.logo_txt.setGeometry(105, 110, 435, 30)
 
+        self.logo_btn = QPushButton(_('Logo'), self.central)
+        self.logo_btn.setFont(self.font)
+        self.logo_btn.setGeometry(550, 110, 120, 30)
+        self.logo_btn.clicked.connect(lambda: loadLogo(self, self.logo_txt))
 
-builder = Gtk.Builder()
-builder.set_translation_domain(appname)
-builder.add_from_file('ui.ui')
-builder.connect_signals(AppImageDesktopMaker())
-janela = builder.get_object('aidm')
-janela.show_all()
-Gtk.main()
+        self.bgImage = QPixmap('icons/aidm_bg.png')
+        self.background = QLabel(self.central)
+        self.background.setGeometry(130, 160, 500, 285)
+        self.background.setPixmap(self.bgImage)
+
+        self.createSc_btn = QPushButton(_('Create Shortcut'), self.central)
+        self.createSc_btn.setFont(self.font)
+        self.createSc_btn.setGeometry(270, 480, 150, 30)
+        self.createSc_btn.clicked.connect(lambda: createShortcut(self, self.name_txt, self.description_txt, self.categories_txt, self.appImage_txt, self.logo_txt))
+
+        self.about_btn = QPushButton(_('About'), self.central)
+        self.about_btn.setGeometry(2, 545, 50, 30)
+        self.about_btn.setStyleSheet('background: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.5); border-radius: 0px;')
+        self.about_btn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.about_btn.clicked.connect(aboutAidm)
+
+        self.lbversion = QLabel(_('Version 0.2'), self.central)
+        self.lbversion.setGeometry(625, 545, 100, 30)
+        self.lbversion.setStyleSheet('color: rgba(0, 0, 0, 0.5);')
+
+        # Keyboard shortcuts
+        about_sc = QShortcut('Ctrl+S', self.about_btn)
+        about_sc.activated.connect(aboutAidm)
+
+        clear_sc = QShortcut('Ctrl+L', self)
+        clear_sc.activated.connect(lambda: clearFields(self.name_txt, self.description_txt, self.categories_txt, self.appImage_txt, self.logo_txt))
+        
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    translator = QTranslator()
+    locale_ = QLocale().system().name()
+    library = QLibraryInfo.location(QLibraryInfo.LibraryLocation.TranslationsPath)
+    translator.load('qt_' + locale_, library)
+    window = AIDM()
+    window.setWindowTitle('AppImage Desktop Maker')
+    window.setWindowIcon(QIcon('aidm.png'))
+    window.setFixedSize(700, 580)
+    window.show()
+    app.installTranslator(translator)
+    sys.exit(app.exec_())
