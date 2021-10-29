@@ -31,7 +31,7 @@ def createShortcut(self, name, desc, categ, file, image):
 
     categories = {'AudioVideo': _('AudioVideo'), 'Development': _('Development'), 'Education': _('Education'), 'Game': _('Game'), 'Graphics': _('Graphics'), 'Network': _('Network'), 'Office': _('Office'), 'Science': _('Science'), 'Settings': _('Settings'), 'System': _('System'), 'Utility': _('Utility')}
 
-    if name == '' or desc == '' or categ == '' or file == '' or image == '':
+    if name.text() == '' or desc.text() == '' or categ.currentText() == '' or file.text() == '' or image.text() == '':
         QMessageBox.information(self, _('Information'), _('Fill all fields before click on create shortcut button.'), QMessageBox.StandardButton(1))
 
     elif not str(file.text()).endswith(tuple(prefix_appImage)):
@@ -45,7 +45,7 @@ def createShortcut(self, name, desc, categ, file, image):
         for k, v in categories.items():
             if categ.currentText() == v:
                 categ_ = k
-        saveDesktop = open(f'{name.text()}.desktop', 'w')
+        saveDesktop = open(os.path.expanduser(f'~/.local/share/applications/{name.text()}.desktop'), 'w')
         saveDesktop.write("#!/usr/bin/env xdg-open\n")
         saveDesktop.write("[Desktop Entry]\n")
         saveDesktop.write("Version=1.0\n")
@@ -60,8 +60,8 @@ def createShortcut(self, name, desc, categ, file, image):
         saveDesktop.write(f"Keywords={name.text()}")
         saveDesktop.close()
 
-        localpath = os.path.expanduser('~/.local/share/applications')
-        os.system(f'mv {name}.desktop {localpath}')
+        #localpath = os.path.expanduser('~/.local/share/applications')
+        #os.system(f'mv {name}.desktop {localpath}')
 
         QMessageBox.information(self, _('Information'), _('Desktop AppImage shortcut created successfully. Now your application can be found in application menu.'), QMessageBox.StandardButton(1))
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-28 11:41-0300\n"
-"PO-Revision-Date: 2021-10-28 11:41-0300\n"
+"POT-Creation-Date: 2021-10-28 23:57-0300\n"
+"PO-Revision-Date: 2021-10-28 23:57-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -25,67 +25,67 @@ msgstr "Nome"
 msgid "Description"
 msgstr "Descrição"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "AudioVideo"
 msgstr "Audio e Vídeo"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Development"
 msgstr "Desenvolvimento"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Education"
 msgstr "Educação"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Game"
 msgstr "Jogos"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Graphics"
 msgstr "Gráficos"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Network"
 msgstr "Internet"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Office"
 msgstr "Escritório"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Science"
 msgstr "Ciência"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Settings"
 msgstr "Configurações"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "System"
 msgstr "Sistema"
 
-#: aidm.py:45 common.py:32
+#: aidm.py:43 common.py:32
 msgid "Utility"
 msgstr "Utilitários"
 
-#: aidm.py:47
+#: aidm.py:45
 msgid "Categories"
 msgstr "Categorias"
 
-#: aidm.py:69
+#: aidm.py:67
 msgid "Logo"
 msgstr "Logotipo"
 
-#: aidm.py:79
+#: aidm.py:77
 msgid "Create Shortcut"
 msgstr "Criar Atalho"
 
-#: aidm.py:84
+#: aidm.py:82
 msgid "About"
 msgstr "Sobre"
 
-#: aidm.py:90
+#: aidm.py:88
 msgid "Version 0.2"
 msgstr "Versão 0.2"
 
@@ -115,7 +115,7 @@ msgid ""
 "found in application menu."
 msgstr ""
 "Atalho desktop de AppImage criado com sucesso. Agora o seu aplicativo pode "
-"ser encontrado no menu de aplicatições."
+"ser encontrado no menu de aplicações."
 
 #: common.py:81
 msgid "About AIDM"
