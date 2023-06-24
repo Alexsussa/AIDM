@@ -7,7 +7,7 @@ from PyQt5.QtGui import *
 import os, gettext, webbrowser
 
 APPANME = 'aidm'
-LOCALE = os.path.abspath('locale')
+LOCALE = os.path.abspath('/usr/share/locale')
 
 gettext.bindtextdomain(APPANME, LOCALE)
 gettext.textdomain(APPANME)
@@ -81,12 +81,12 @@ def aboutAidm():
     popup.setWindowTitle(_('About AIDM'))
     popup.setFixedSize(500, 590)
 
-    bg_img = QPixmap('icons/aidm.png')
+    bg_img = QPixmap('/usr/share/icons/hicolor/256x256/apps/aidm.png')
     lb_bg = QLabel('', popup)
     lb_bg.setGeometry(100, 0, 500, 285)
     lb_bg.setPixmap(bg_img)
 
-    version = QLabel('v0.2', popup)
+    version = QLabel('v0.3', popup)
     version.setGeometry(250, 300, 100, 30)
 
     gh = QCommandLinkButton(_('Source Code'), popup)
@@ -98,7 +98,7 @@ def aboutAidm():
     license_ = QLabel(_('License MIT'), popup)
     license_.setGeometry(233, 340, 120, 30)
 
-    copying = open('COPYING', 'r').read()
+    copying = open('/usr/share/doc/aidm/COPYING', 'r').read()
     license_txt = QTextEdit(popup)
     license_txt.setGeometry(5, 370, 490, 210)
     license_txt.setText(copying)

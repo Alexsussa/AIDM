@@ -8,7 +8,7 @@ from common import *
 import os, sys, gettext
 
 APPANME = 'aidm'
-LOCALE = os.path.abspath('locale')
+LOCALE = os.path.abspath('/usr/share/locale')
 
 gettext.bindtextdomain(APPANME, LOCALE)
 gettext.textdomain(APPANME)
@@ -29,6 +29,7 @@ class AIDM(QMainWindow):
         self.lbName.setGeometry(20, 30, 50, 30)
 
         self.name_txt = QLineEdit(self.central)
+        self.name_txt.setPlaceholderText(_('Type a name to application...'))
         self.name_txt.setFont(self.font)
         self.name_txt.setGeometry(70, 30, 200, 30)
 
@@ -37,6 +38,7 @@ class AIDM(QMainWindow):
         self.lbDescription.setGeometry(280, 30, 100, 30)
         
         self.description_txt = QLineEdit(self.central)
+        self.description_txt.setPlaceholderText(_('Type some description...'))
         self.description_txt.setFont(self.font)
         self.description_txt.setGeometry(370, 30, 300, 30)
 
@@ -52,6 +54,7 @@ class AIDM(QMainWindow):
         self.categories_txt.addItems(sorted(categories.values()))
 
         self.appImage_txt = QLineEdit(self.central)
+        self.appImage_txt.setPlaceholderText(_('Select an AppImage application...'))
         self.appImage_txt.setFont(self.font)
         self.appImage_txt.setGeometry(260, 70, 280, 30)
 
@@ -61,6 +64,7 @@ class AIDM(QMainWindow):
         self.appImage_btn.clicked.connect(lambda: loadAppImage(self, self.appImage_txt))
 
         self.logo_txt = QLineEdit(self.central)
+        self.logo_txt.setPlaceholderText(_('Select an image to set as application logo...'))
         self.logo_txt.setFont(self.font)
         self.logo_txt.setGeometry(105, 110, 435, 30)
 
@@ -69,7 +73,7 @@ class AIDM(QMainWindow):
         self.logo_btn.setGeometry(550, 110, 120, 30)
         self.logo_btn.clicked.connect(lambda: loadLogo(self, self.logo_txt))
 
-        self.bgImage = QPixmap('icons/aidm_bg.png')
+        self.bgImage = QPixmap('/usr/share/icons/hicolor/256x256/apps/aidm_bg.png')
         self.background = QLabel(self.central)
         self.background.setGeometry(130, 160, 500, 285)
         self.background.setPixmap(self.bgImage)
@@ -81,13 +85,14 @@ class AIDM(QMainWindow):
 
         self.about_btn = QPushButton(_('About'), self.central)
         self.about_btn.setGeometry(2, 545, 50, 30)
-        self.about_btn.setStyleSheet('background: rgba(255, 255, 255, 0); color: rgba(0, 0, 0, 0.5); border-radius: 0px;')
+        self.about_btn.setObjectName('aboutButton')
         self.about_btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.about_btn.clicked.connect(aboutAidm)
 
-        self.lbversion = QLabel(_('Version 0.2'), self.central)
+        self.lbversion = QLabel(_('Version 0.3'), self.central)
         self.lbversion.setGeometry(625, 545, 100, 30)
-        self.lbversion.setStyleSheet('color: rgba(0, 0, 0, 0.5);')
+        self.lbversion.setObjectName('lbVersion')
+        self.lbversion.setToolTip(_('Press Ctrl+J to change to dark theme'))
 
         # Keyboard shortcuts
         about_sc = QShortcut('Ctrl+S', self.about_btn)
@@ -95,17 +100,63 @@ class AIDM(QMainWindow):
 
         clear_sc = QShortcut('Ctrl+L', self)
         clear_sc.activated.connect(lambda: clearFields(self.name_txt, self.description_txt, self.categories_txt, self.appImage_txt, self.logo_txt))
+
+        # Functions that need to be running at start
+        self.checkTheme()
+
+        # Keyboard shortcuts
+        ct = QShortcut('Ctrl+J', self)
+        ct.activated.connect(lambda: [self.changeTheme(), self.checkTheme()])
+
+
+    def checkTheme(self):
+        import json
+        configPath = os.path.abspath(os.path.expanduser('~/.config/aidm/'))
+        if not os.path.exists(configPath):
+            os.makedirs(configPath)
+            with open(f'{configPath}/config.json', 'w') as file:
+                json.dump({'current theme': 'default'}, file, indent=4)
+        with open(os.path.expanduser('~/.config/aidm/config.json'), 'r') as configFileRead:
+            loadJson = json.loads(configFileRead.read())
+            configFileRead.close()
+            currentTheme = loadJson['current theme']
+            theme = ''
+            if currentTheme == 'default':
+                theme = 'default.css'
+            else:
+                theme = 'dark.css'
+            app.setStyleSheet(open(f'/usr/share/aidm/themes/{theme}', 'r').read())
+
+    
+    def changeTheme(self):
+        import json
+        configPath = os.path.abspath(os.path.expanduser('~/.config/aidm/'))
+        configFile = os.path.join(f'{configPath}/' + 'config.json')
+        with open(f'{configFile}', 'r') as configFileRead:
+            loadJson = json.loads(configFileRead.read())
+            configFileRead.close()
+            currentTheme = loadJson['current theme']
+
+        with open(f'{configFile}', 'w') as configFileWrite:
+            themeToSave = ''
+            if currentTheme == 'default':
+                themeToSave = {'current theme': 'dark'}
+            else:
+                themeToSave = {'current theme': 'default'}
+            json.dump(themeToSave, configFileWrite, indent=4)
         
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setStyleSheet(open('/usr/share/aidm/themes/default.css', 'r').read())
     translator = QTranslator()
     locale_ = QLocale().system().name()
-    library = QLibraryInfo.location(QLibraryInfo.LibraryLocation.TranslationsPath)
+    #library = QLibraryInfo.location(QLibraryInfo.LibraryLocation.TranslationsPath)
+    library = os.path.abspath('/usr/share/aidm/translations')
     translator.load('qt_' + locale_, library)
     window = AIDM()
     window.setWindowTitle('AppImage Desktop Maker')
-    window.setWindowIcon(QIcon('aidm.png'))
+    window.setWindowIcon(QIcon('/usr/share/icons/hicolor/256x256/apps/aidm.png'))
     window.setFixedSize(700, 580)
     window.show()
     app.installTranslator(translator)

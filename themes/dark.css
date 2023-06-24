@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+QWidget {
+    background-color: #363636;
+    color: lightgray;
+}
+
+QMenuBar {
+    background-color: #242424;
+    color: lightgray;
+}
+
+QMenuBar:item:selected {
+    background-color: #363636;
+    color: lightgray;
+}
+
+QMenu:item {
+    background-color: #242424;
+}
+
+QMenu:item:hover {
+    background-color: #242424;
+}
+
+QMenu:item:selected {
+    background-color: #363636;
+}
+
+QLineEdit {
+    border: 1px solid #242424;
+}
+
+QLineEdit:hover {
+    border: 1px solid #242424;
+}
+
+QLineEdit {
+    selection-background-color: #696969;
+    selection-color: white;
+}
+
+QPushButton:hover {
+    background-color: #242424;
+    color: white;
+}
+
+QComboBox, QAbstractItemView {
+    selection-background-color: #696969;
+    selection-color: white;
+}
+
+QComboBox:item:selected {
+    background-color: #242424;
+}
+
+QScrollBar {
+    background-color: #242424;
+}
+
+QScrollBar:handle:vertical {
+    background-color: #696969;
+}
+
+QScrollBar:handle:pressed {
+    background-color: #363636;
+}
+
+QTextEdit {
+    border: 1px solid #242424;
+}
+
+QTextEdit:hover {
+    border: 1px solid #242424;
+}
+
+QTextEdit {
+    selection-background-color: #696969;
+    selection-color: white;
+}
+
+QCommandLinkButton:hover {
+    background-color: none;
+}
+
+QPushButton#aboutButton {
+    border-style: none;
+    color: lightgray;
+}
+
+QLabel#lbVersion {
+    color: lightgray;
+}
