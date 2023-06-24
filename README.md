@@ -3,7 +3,7 @@ AppImage Desktop Maker
 
 **English:**
 
-AppImage Desktop Maker (AIDM) is a simple software that creates desktop shortcuts to programs .AppImage.
+AppImage Desktop Maker (AIDM) is a simple software that creates desktop shortcuts to .AppImage applications.
 It was developed to be simple and pratical
 
 How to use:
@@ -18,7 +18,7 @@ You open software menu and search by the program name, open it and use it.
 
 **Português Brasil:**
 
-AppImage Desktop Maker (AIDM) é software simples para criação de atalhos desktop para programas .AppImage.
+AppImage Desktop Maker (AIDM) é software simples para criação de atalhos desktop para aplicativos .AppImage.
 O mesmo sendo criado com intuito simples e prático.
 
 Modo de uso:
